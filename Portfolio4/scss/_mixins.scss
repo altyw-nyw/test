@@ -1,0 +1,61 @@
+@use "_vars" as var;
+@use "_vars" as nums;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin adapt-pad {
+  @media (max-width: 1279px) {
+    padding: 0 40px;
+  }
+  @media (max-width: 719px) {
+    padding: 0 20px;
+  }
+}
+
+@mixin adapt-header {
+  @media (max-width: 719px) {
+    font-size: 36px;
+  }
+}
+
+@mixin hov-act {
+  @media (hover: hover) {
+    &:hover {
+      background-color: var.$black;
+      color: var.$white;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      background-color: var.$black;
+      color: var.$white;
+    }
+  }
+}
+
+@mixin adapt-col {
+  @media (max-width: 1279px) {
+    flex-direction: column;
+    gap: nums.$num-24;
+  }
+}
+
+@mixin adapt-fz15 {
+  @media (max-width: 719px) {
+    font-size: 15px;
+  }
+}
+
+@mixin adapt-max-width {
+  @media (max-width: 1279px) {
+    max-width: none;
+  }
+}
+
+@mixin social-icons($gap) {
+  display: flex;
+  gap: $gap;
+}
